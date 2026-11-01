@@ -1,0 +1,159 @@
+{
+  "study_id": "retrieval-calibration-transfer-v2",
+  "frozen_utc": "2026-10-30 19:46:24 UTC",
+  "status": "prospectively-frozen-extension-after-v1",
+  "date": "2026-10-31",
+  "prior_exposure": "v1 SciFact/NFCorpus results and earlier ArguAna retrieval work seen. New target calibration outcomes not inspected. New tests do not erase prior exposure.",
+  "question": "With the same 100 target labels, does target-only learning beat source-model intercept adaptation for judged retrieval-hit probability across lexical and dense retrieval?",
+  "datasets": [
+    "scifact",
+    "nfcorpus",
+    "arguana",
+    "scidocs"
+  ],
+  "retrievers": [
+    "bm25",
+    "minilm",
+    "bge_small"
+  ],
+  "models": {
+    "minilm": {
+      "repo": "Qdrant/all-MiniLM-L6-v2-onnx",
+      "revision": "d13954661f83248295ba75c1ed411eef3b7b936e",
+      "max_tokens": 256,
+      "query_prefix": ""
+    },
+    "bge_small": {
+      "repo": "Qdrant/bge-small-en-v1.5-onnx-Q",
+      "revision": "Resolved and recorded by preparation before inference; exact snapshot required",
+      "max_tokens": 512,
+      "query_prefix": "Represent this sentence for searching relevant passages: "
+    }
+  },
+  "splits": {
+    "scifact": "official train/test; exact normalized query deduplication; test preserved",
+    "nfcorpus": "official train/test; dev unused; exact normalized query deduplication; test preserved",
+    "arguana": "BEIR test queries repurposed: debate-ID groups hash split, 65% adaptation/source pool and35% heldout; all queries retained; missing positives unreachable not deleted",
+    "scidocs": "BEIR test queries repurposed: normalized query-text groups hash split,65% pool35%heldout"
+  },
+  "split_seed": "submission-v2-split",
+  "group_hash_cut": 0.65,
+  "self_match_policy": "Exclude document whose ID equals query ID for every retriever and QL auxiliary scoring",
+  "source_fit": "Leave one collection out; up to600 eligible source queries per other collection selected by fixed group-independent hash; bootstrap those queries within source text/debate groups in each of20 repeats",
+  "target_budgets": [
+    25,
+    50,
+    100
+  ],
+  "repeats": 20,
+  "seeds": [
+    2000,
+    2001,
+    2002,
+    2003,
+    2004,
+    2005,
+    2006,
+    2007,
+    2008,
+    2009,
+    2010,
+    2011,
+    2012,
+    2013,
+    2014,
+    2015,
+    2016,
+    2017,
+    2018,
+    2019
+  ],
+  "k_primary": 5,
+  "k_sensitivity": [
+    1,
+    10
+  ],
+  "bm25": {
+    "k1": 1.2,
+    "b": 0.75,
+    "stemming": false,
+    "stopwords": false
+  },
+  "ql_auxiliary": {
+    "mu": 1000,
+    "depth": 100,
+    "score": "sum known query term multiplicities*log[(tf+mu*cf/C)/(doclen+mu)]",
+    "NQC": "population SD of top100 QL scores / abs(collection query log-likelihood)",
+    "WIG": "(mean top100 QL scores - collection query log-likelihood)/sqrt(number of known query tokens)",
+    "OOV": "omit unseen tokens from QL; empty known query produces0features",
+    "note": "Standard score-only/unigram formulation; not full original MRF/proximity WIG"
+  },
+  "features": [
+    "log1p_nonnegative_top1",
+    "relative_top1_top2_gap",
+    "top10_coefficient_of_variation_zero_padded",
+    "log1p_query_token_count",
+    "query_OOV_fraction",
+    "mean_BM25_IDF",
+    "QL_NQC100",
+    "QL_unigram_WIG100"
+  ],
+  "methods": [
+    "source_prior",
+    "source_score",
+    "source_nqc",
+    "source_wig",
+    "source_multi",
+    "offset_adapt",
+    "platt_adapt",
+    "isotonic_adapt",
+    "target_prior",
+    "target_only"
+  ],
+  "learning": {
+    "logistic_C": 1,
+    "source_and_target_scale": "training-fitted only",
+    "offset": "regularized intercept-only with summed log loss+delta^2/2",
+    "platt": "StandardScaler+LogisticRegression C1 on source logits, target calibration only",
+    "isotonic": "IsotonicRegression increasing=true, out_of_bounds=clip; one-class falls back to smoothed prior",
+    "target_prior": "(s+0.5)/(n+1)",
+    "oneclass": "Jeffreys-smoothed prior fallback; retained and counted"
+  },
+  "primary_family": {
+    "contrast": "target_only minus offset_adapt mean Brier at100targetlabels; negative favors target-only",
+    "conditions": [
+      "arguana/bm25",
+      "arguana/bge_small",
+      "scidocs/bm25",
+      "scidocs/bge_small"
+    ],
+    "multiplicity": "Four simultaneous comparisons using98.75% marginal percentile intervals (Bonferroni95% familywise)",
+    "bootstrap": "5000 crossed resamples: fit-repeat indices and heldout query groups; paired predictions retained across methods; conditional on observed collections/pools",
+    "scope": "Captures stochastic source refits/calibration draw variability and test-query variation conditional on these observed pools; not population uncertainty over unseen collections"
+  },
+  "secondary": [
+    "Brier/logloss/AUROC/AP/ECE10/bin counts",
+    "raw per-query probabilities",
+    "risk/coverage at fixedp0.8 and risk-coverage curves",
+    "k1/k10 sensitivity",
+    "budget25/50 sensitivity",
+    "NQC/WIG/score diagnostics",
+    "within-repeat probability versus ranking changes"
+  ],
+  "data_audits": [
+    "official archive checksums",
+    "missing positive qrels retained",
+    "self-match exclusion",
+    "train/test group disjointness",
+    "cross-collection exact normalized text leakage removed from source pool against target heldout",
+    "dedup source/target training query text",
+    "no source fitting on target corpus labels"
+  ],
+  "stopping_rules": [
+    "Abort model inference on hash mismatch/nonfinite embeddings",
+    "If a collection pool has fewer than100 queries stop and record amended protocol before outcomes",
+    "No hyperparameter or method selection based on test outcomes",
+    "Unfavorable findings retained"
+  ],
+  "budget": "No paid API/compute; venue no-fee; author fields left blank at user request."
+}

@@ -1,0 +1,65 @@
+{
+  "primary": [
+    {
+      "target": "arguana",
+      "retriever": "bm25",
+      "budget": 100,
+      "contrast": "target_only_minus_offset",
+      "delta_brier": -0.0316331908382868,
+      "ci_low": -0.07735522690094462,
+      "ci_high": 0.00817301124625212,
+      "ci_level": 0.9875,
+      "fit_mean_sd": 0.01169721603263019,
+      "n_queries": 496,
+      "n_groups": 67,
+      "primary": true
+    },
+    {
+      "target": "arguana",
+      "retriever": "potion_retrieval",
+      "budget": 100,
+      "contrast": "target_only_minus_offset",
+      "delta_brier": -0.004280776540393971,
+      "ci_low": -0.03433480070969183,
+      "ci_high": 0.01658324709433287,
+      "ci_level": 0.9875,
+      "fit_mean_sd": 0.014945370506300687,
+      "n_queries": 496,
+      "n_groups": 67,
+      "primary": true
+    },
+    {
+      "target": "scidocs",
+      "retriever": "bm25",
+      "budget": 100,
+      "contrast": "target_only_minus_offset",
+      "delta_brier": 0.003846030425935191,
+      "ci_low": -0.013856468605858607,
+      "ci_high": 0.022444129192599655,
+      "ci_level": 0.9875,
+      "fit_mean_sd": 0.012522124451144437,
+      "n_queries": 360,
+      "n_groups": 360,
+      "primary": true
+    },
+    {
+      "target": "scidocs",
+      "retriever": "potion_retrieval",
+      "budget": 100,
+      "contrast": "target_only_minus_offset",
+      "delta_brier": 0.00027468878328767884,
+      "ci_low": -0.016243947043281422,
+      "ci_high": 0.017053650787834152,
+      "ci_level": 0.9875,
+      "fit_mean_sd": 0.007590546796345489,
+      "n_queries": 360,
+      "n_groups": 360,
+      "primary": true
+    }
+  ],
+  "primary_intervals_cross_zero": true,
+  "distinct_heldout_queries": 1479,
+  "raw_probability_values": 5324400,
+  "metrics_rows": 14400,
+  "conclusion": "No established primary winner; not an equivalence result."
+}

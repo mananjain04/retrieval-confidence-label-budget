@@ -1,0 +1,13 @@
+{
+  "verdict": "PASS",
+  "unit_tests": 16,
+  "all_metric_rows_checked": 14400,
+  "prediction_values_checked": 5324400,
+  "judged_hit_labels_checked": 56718,
+  "self_exclusions_checked": 18906,
+  "source_and_target_split_checks": "PASS",
+  "primary_intervals_independently_recomputed": 4,
+  "fitted_models_probabilities_reconstructed": 13680,
+  "all36contrast_means_checked": true,
+  "validator_sha256": "f30a65ccec825d2edc6f2378220af14751bfddbb8c349f1be1dfdaaa60cb8f8f"
+}

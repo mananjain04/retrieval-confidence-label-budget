@@ -1,0 +1,103 @@
+{
+  "verdict": "PASS",
+  "scope": "One heldout query per collection and retriever, full-corpus independent Counter/float64 reference; not an exhaustive ranking reimplementation.",
+  "checks": [
+    {
+      "dataset": "scifact",
+      "retriever": "bm25",
+      "qid": "1",
+      "top10_exact_match": true,
+      "score_max_abs_error": 1.7763568394002505e-15,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "scifact",
+      "retriever": "potion_base",
+      "qid": "1",
+      "top10_exact_match": true,
+      "score_max_abs_error": 2.0826730845469044e-07,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "scifact",
+      "retriever": "potion_retrieval",
+      "qid": "1",
+      "top10_exact_match": true,
+      "score_max_abs_error": 2.0825063284934942e-07,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "nfcorpus",
+      "retriever": "bm25",
+      "qid": "PLAIN-1008",
+      "top10_exact_match": true,
+      "score_max_abs_error": 0.0,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "nfcorpus",
+      "retriever": "potion_base",
+      "qid": "PLAIN-1008",
+      "top10_exact_match": true,
+      "score_max_abs_error": 1.0309861098178885e-07,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "nfcorpus",
+      "retriever": "potion_retrieval",
+      "qid": "PLAIN-1008",
+      "top10_exact_match": true,
+      "score_max_abs_error": 1.136869041129529e-07,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "arguana",
+      "retriever": "bm25",
+      "qid": "test-culture-ahrtsdlgra-con01a",
+      "top10_exact_match": true,
+      "score_max_abs_error": 2.842170943040401e-14,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "arguana",
+      "retriever": "potion_base",
+      "qid": "test-culture-ahrtsdlgra-con01a",
+      "top10_exact_match": true,
+      "score_max_abs_error": 6.107144991940316e-07,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "arguana",
+      "retriever": "potion_retrieval",
+      "qid": "test-culture-ahrtsdlgra-con01a",
+      "top10_exact_match": true,
+      "score_max_abs_error": 2.2080225581255775e-07,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "scidocs",
+      "retriever": "bm25",
+      "qid": "0210b3fe6f7173c86936b5dd9261bc0be0c45652",
+      "top10_exact_match": true,
+      "score_max_abs_error": 3.552713678800501e-15,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "scidocs",
+      "retriever": "potion_base",
+      "qid": "0210b3fe6f7173c86936b5dd9261bc0be0c45652",
+      "top10_exact_match": true,
+      "score_max_abs_error": 3.8941227153976854e-07,
+      "auxiliary_features_match": true
+    },
+    {
+      "dataset": "scidocs",
+      "retriever": "potion_retrieval",
+      "qid": "0210b3fe6f7173c86936b5dd9261bc0be0c45652",
+      "top10_exact_match": true,
+      "score_max_abs_error": 9.481568175040422e-08,
+      "auxiliary_features_match": true
+    }
+  ],
+  "validator_sha256": "3dc4acb54a67f55ab7d13d20b108943ca42f3518dfb4d7eea52e3b5e29a59f78"
+}

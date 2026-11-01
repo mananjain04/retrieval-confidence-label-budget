@@ -1,0 +1,122 @@
+{
+  "status": "executed",
+  "model": {
+    "kind": "potion_retrieval",
+    "repo": "minishlab/potion-retrieval-32M",
+    "files": [
+      {
+        "name": "model.safetensors",
+        "bytes": 129210456,
+        "sha256": "07609e5bd33aad37900b3fd62f4ec96f6daec88ca4d46b9d8b928bfababf6ea0"
+      },
+      {
+        "name": "tokenizer.json",
+        "bytes": 1493150,
+        "sha256": "7d75cbc54318138807c401b0f0c9721117c628b39de8e8e0edb6cb17e0ee7d18"
+      },
+      {
+        "name": "config.json",
+        "bytes": 202,
+        "sha256": "63c00d90824c832c04ec1d02b6a983fb90489bf049f29fbff15ba481b8a432ee"
+      },
+      {
+        "name": "README.md",
+        "bytes": 17141,
+        "sha256": "dd46f9828de776831d173b39b3dfb5ee9b8e5cb756daa3739afab1ab5d6542fd"
+      }
+    ],
+    "revision": "6fc8051fab2a1e0ee76689cf08c853792ac285e7"
+  },
+  "protocol_sha256": "f57fedeffbbb9de373936f199faff5ec7e0084e54fcb6dfa6b6259da6b75be38",
+  "max_tokens": 512,
+  "query_prefix": "",
+  "batch_size": 64,
+  "device": "CPU/numpy static pooling",
+  "packages": {
+    "fastembed": "0.9.1",
+    "numpy": "2.5.4",
+    "tokenizers": "0.23.3"
+  },
+  "outputs": {
+    "scifact/documents": {
+      "input_sha256": "53b13bad190520aa831fe6c696ddf6bbe44100affce08585c1799889c76fff88",
+      "output_sha256": "b2f62623ba446f2aaa804d4d34e7964c0f008e4fac5fcc5783e391178c59dbcf",
+      "shape": [
+        5183,
+        512
+      ],
+      "zero_vectors": 0
+    },
+    "scifact/queries": {
+      "input_sha256": "13e426241d49c893c7494bf31bb2cc5375264fdc3317f9b320e5ae0ef9e80b29",
+      "output_sha256": "b1a07dfe42f678a00525e002ad2aa914e30b78b43f599d0493893b2a8a5d0026",
+      "shape": [
+        1105,
+        512
+      ],
+      "zero_vectors": 0
+    },
+    "nfcorpus/documents": {
+      "input_sha256": "c86c65db729ca76f44fb5d2ff8e9be0fc9da12b73a4caed5886883ecdbeaa2b5",
+      "output_sha256": "fa1d772f5cbf36ab196238cb9d520c1e21558f8c0c88902dc0bef61e980cefa1",
+      "shape": [
+        3633,
+        512
+      ],
+      "zero_vectors": 0
+    },
+    "nfcorpus/queries": {
+      "input_sha256": "4128599c8b3123e0b256e58fe48feab25c25694fbc22d6600e00f304e58388a8",
+      "output_sha256": "4e76db574c2b147bb6061f792426a37461d3c991bbedbb523bc653acde6c5d25",
+      "shape": [
+        2892,
+        512
+      ],
+      "zero_vectors": 0
+    },
+    "arguana/documents": {
+      "input_sha256": "398adbb1a5540405bc6205d78b820d7f721dbdb2e266add400173bf2dfaf34a5",
+      "output_sha256": "28a2745deb1d00adba9760e17df7db0f0fa6b2fe071c3e9d9e5aff756c49081e",
+      "shape": [
+        8674,
+        512
+      ],
+      "zero_vectors": 0
+    },
+    "arguana/queries": {
+      "input_sha256": "89d2e8b02574a12965c57bb21f271c97aaa23ea6bb2efffb811011ea7ef9f4ff",
+      "output_sha256": "73e48651e1fac9eb16d527f3433a66164cb4a405ff41d1aea9f3f8005dbbdee9",
+      "shape": [
+        1305,
+        512
+      ],
+      "zero_vectors": 0
+    },
+    "scidocs/documents": {
+      "input_sha256": "679f5c9e5a9c3eeaa3b868814249bd31b390ca96e6a9298df35c98d05b4e8236",
+      "output_sha256": "4b0cbaec5c80e9dffbcee0cc87b33df05b7eaae12f43ee04eb267b57e9951e72",
+      "shape": [
+        25657,
+        512
+      ],
+      "zero_vectors": 0
+    },
+    "scidocs/queries": {
+      "input_sha256": "a8be37abc03527749150787586239fce2ee52b0d620c5b2c217247e8b94aeb7b",
+      "output_sha256": "3f72c99ce87797301782e79a9e549a36ad1d8d28b727be25b27966c63c598097",
+      "shape": [
+        1000,
+        512
+      ],
+      "zero_vectors": 0
+    }
+  },
+  "direct_pool_max_abs_errors": {
+    "scifact": 0.0,
+    "nfcorpus": 0.0,
+    "arguana": 1.4901161193847656e-08,
+    "scidocs": 0.0
+  },
+  "elapsed_seconds": 26.070476300003065,
+  "completed_utc": "2026-10-30T20:03:44.427018+00:00"
+}

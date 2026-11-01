@@ -1,0 +1,56 @@
+{
+  "scope": "Independent recalculation of saved experimental outputs; not a fresh retriever run or human approval",
+  "status": "PASS",
+  "saved_probability_values_recomputed": 5324400,
+  "metric_rows_recomputed": 14400,
+  "judged_hit_labels_checked": 56718,
+  "models_reconstructed": 13680,
+  "primary_comparisons": [
+    {
+      "target": "arguana",
+      "retriever": "bm25",
+      "delta": -0.0316331908382868,
+      "ci": [
+        -0.07735522690094461,
+        0.008173011246252122
+      ]
+    },
+    {
+      "target": "arguana",
+      "retriever": "potion_retrieval",
+      "delta": -0.004280776540393971,
+      "ci": [
+        -0.03433480070969184,
+        0.01658324709433287
+      ]
+    },
+    {
+      "target": "scidocs",
+      "retriever": "bm25",
+      "delta": 0.003846030425935191,
+      "ci": [
+        -0.013856468605858608,
+        0.02244412919259965
+      ]
+    },
+    {
+      "target": "scidocs",
+      "retriever": "potion_retrieval",
+      "delta": 0.00027468878328767884,
+      "ci": [
+        -0.016243947043281422,
+        0.01705365078783415
+      ]
+    }
+  ],
+  "independent_test_queries": 1479,
+  "human_author_approval": "PENDING",
+  "fresh_end_to_end_reproduction": "NOT_RUN",
+  "equation_code_review": "Brier, clipped-logit offset objective, unigram NQC/WIG match saved implementation; CV uses absolute mean",
+  "manuscript_table_cells_checked": 232,
+  "document_clarity_corrections": 6,
+  "citations": "All 15 reference identities located in primary-source records; relevant prior-work descriptions checked; not a full systematic review or retraction-database search.",
+  "public_repository_or_doi": "NOT_CREATED",
+  "grammar_service_recheck": "AWAITING_USER_UPLOAD",
+  "plagiarism_service_check": "AWAITING_USER_UPLOAD_AND_AVAILABLE_QUOTA"
+}

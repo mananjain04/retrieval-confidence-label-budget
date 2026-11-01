@@ -1,0 +1,95 @@
+[
+  {
+    "dataset": "scidocs",
+    "retriever": "bm25",
+    "queries": 1000,
+    "seconds": 34.938409800000954,
+    "artifact_sha256": "02280b3aced0777bdabc0500f3603fa9a5b025f5df468cd4be6443ba716c9edf",
+    "source_sha256": "b24620a3923f91ed1dfb2d14ccc308999dc260b5ec3ac7c3bfeceffc34200ff6"
+  },
+  {
+    "dataset": "scifact",
+    "retriever": "bm25",
+    "artifact_sha256": "3b49dacfc86bcd3c9cfc62d51eb85a9b4b7ad5b9c3ba5b16cc84e98690bbf7fb",
+    "seconds": null,
+    "recovery_note": "Completed artifact from interrupted registry-writing run retained; elapsed timing unavailable. Validated independently before manuscript."
+  },
+  {
+    "dataset": "nfcorpus",
+    "retriever": "bm25",
+    "artifact_sha256": "7e5a9e8746af3fd8ae777f8d69d2e3dbdf9429568eaee29600f61f958409fe73",
+    "seconds": null,
+    "recovery_note": "Completed artifact from interrupted registry-writing run retained; elapsed timing unavailable. Validated independently before manuscript."
+  },
+  {
+    "dataset": "arguana",
+    "retriever": "bm25",
+    "artifact_sha256": "487a8a18f83a8bf26f3c2212d5da9b2d5965132b703d2ae45007ee1423cf3ba7",
+    "seconds": null,
+    "recovery_note": "Completed artifact from interrupted registry-writing run retained; elapsed timing unavailable. Validated independently before manuscript."
+  },
+  {
+    "dataset": "scifact",
+    "retriever": "potion_base",
+    "queries": 1105,
+    "seconds": 1.8219129999997676,
+    "artifact_sha256": "df8dd7f3dbf5a61c5f2aa338d9a4866e42508e22acb7c81f1b1b4411528c641f",
+    "source_sha256": "33ad1ce2e522cc285a52cebb66cd4bd310028326d238770e731f8b261f503fc1"
+  },
+  {
+    "dataset": "scifact",
+    "retriever": "potion_retrieval",
+    "queries": 1105,
+    "seconds": 2.0098904999977094,
+    "artifact_sha256": "2b7a3d5757560646e0d5e49722e2c3881178ff08f8b544a4104802de64964dbc",
+    "source_sha256": "33ad1ce2e522cc285a52cebb66cd4bd310028326d238770e731f8b261f503fc1"
+  },
+  {
+    "dataset": "nfcorpus",
+    "retriever": "potion_base",
+    "queries": 2892,
+    "seconds": 3.4494199000037042,
+    "artifact_sha256": "9d67eccb711ff87fa28da4ee00aac1acb85120cc5d576e39dbd21bb504b0e286",
+    "source_sha256": "33ad1ce2e522cc285a52cebb66cd4bd310028326d238770e731f8b261f503fc1"
+  },
+  {
+    "dataset": "nfcorpus",
+    "retriever": "potion_retrieval",
+    "queries": 2892,
+    "seconds": 3.27301310000621,
+    "artifact_sha256": "f585d01beb3f70f97a61af7b63f33a1ccbd16fc654c2a1f925dfdc7bcce5e266",
+    "source_sha256": "33ad1ce2e522cc285a52cebb66cd4bd310028326d238770e731f8b261f503fc1"
+  },
+  {
+    "dataset": "arguana",
+    "retriever": "potion_base",
+    "queries": 1305,
+    "seconds": 3.9419851999991806,
+    "artifact_sha256": "643cb3e34d1c5a94c2e1ee2871aebda76af365c282b94df64336147a3516a1dd",
+    "source_sha256": "33ad1ce2e522cc285a52cebb66cd4bd310028326d238770e731f8b261f503fc1"
+  },
+  {
+    "dataset": "arguana",
+    "retriever": "potion_retrieval",
+    "queries": 1305,
+    "seconds": 3.894811699996353,
+    "artifact_sha256": "2944ab90c42f29bf33c9c3270658457fd34c03fb5d74c819482dab75172f6043",
+    "source_sha256": "33ad1ce2e522cc285a52cebb66cd4bd310028326d238770e731f8b261f503fc1"
+  },
+  {
+    "dataset": "scidocs",
+    "retriever": "potion_base",
+    "queries": 1000,
+    "seconds": 5.314946800004691,
+    "artifact_sha256": "1b95bbe2fb3b30f7683ba0f0f993e280e1474630d56538348a11478b84ece7ec",
+    "source_sha256": "33ad1ce2e522cc285a52cebb66cd4bd310028326d238770e731f8b261f503fc1"
+  },
+  {
+    "dataset": "scidocs",
+    "retriever": "potion_retrieval",
+    "queries": 1000,
+    "seconds": 5.893404399997962,
+    "artifact_sha256": "6f70a902faf7dc93acba476533390b1d2fa5b8200972560633c8a7e6d8bcd5e1",
+    "source_sha256": "33ad1ce2e522cc285a52cebb66cd4bd310028326d238770e731f8b261f503fc1"
+  }
+]
