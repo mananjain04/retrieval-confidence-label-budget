@@ -50,7 +50,8 @@
   "manuscript_table_cells_checked": 232,
   "document_clarity_corrections": 6,
   "citations": "All 15 reference identities located in primary-source records; relevant prior-work descriptions checked; not a full systematic review or retraction-database search.",
-  "public_repository_or_doi": "NOT_CREATED",
+  "public_repository_or_doi": "https://github.com/mananjain04/retrieval-confidence-label-budget",
   "grammar_service_recheck": "AWAITING_USER_UPLOAD",
-  "plagiarism_service_check": "AWAITING_USER_UPLOAD_AND_AVAILABLE_QUOTA"
+  "plagiarism_service_check": "AWAITING_USER_UPLOAD_AND_AVAILABLE_QUOTA",
+  "public_repository_note": "Research artifact only; no DOI issued; author approval and final external checks pending"
 }
